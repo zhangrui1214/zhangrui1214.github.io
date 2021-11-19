@@ -71,6 +71,126 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-1.浮动" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/11/19/1.%E6%B5%AE%E5%8A%A8/" class="article-date">
+  <time class="dt-published" datetime="2021-11-19T13:22:51.915Z" itemprop="datePublished">2021-11-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>title：11月19日博客<br>date：11月19日<br>tags：博客</p>
+<h1 id="1-浮动"><a href="#1-浮动" class="headerlink" title="1.浮动"></a>1.浮动</h1><p><strong>一、float元素：通过设置浮动，使元素向其父元素左侧或右侧移动</strong></p>
+<p>​    可选值：none  即默认元素</p>
+<p>​      left 向左浮动</p>
+<p>​      right 向右移动</p>
+<p>​    注意：设置浮动以后，水平布局的等式便不需要强制成立</p>
+<p>  <strong>二、 元素设置浮动以后，会完全从文档流脱离，不再占用文档流的位置</strong>，</p>
+<p>​    所以元素下边还在文档流中的元素会自动向上移动，代码及效果如图所示：</p>
+<p> .box1{  width:200px;</p>
+<p>​          height: 200px;</p>
+<p>​          background-color: aqua;</p>
+<p>​         float:left;  }</p>
+<p>​        .box2{  width:300px;</p>
+<p>​          height: 300px;</p>
+<p>​          background-color: orange;</p>
+<p>​        }</p>
+<p><img src="https://img-blog.csdnimg.cn/4d38ea94afc44f4d9439b43dea92c0e6.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAfnZpb2xldC0=,size_19,color_FFFFFF,t_70,g_se,x_16" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p> <strong>三、浮动的特点：</strong></p>
+<p>​    1.浮动元素会完全从文档流脱离，不再占用文档流的位置；</p>
+<p>​    2.设置浮动以后元素会向其父元素左侧或右侧移动</p>
+<p>​    3.浮动元素默认不会从父元素溢出</p>
+<p>​    <strong>4.浮动元素向左向右移动时，不会超过前面的其他浮动元素</strong><em>（前面指的是在html中该元素的前面</em>）</p>
+<p>如下图所示：</p>
+<p>.box1{  width:200px;</p>
+<p>​          height: 200px;</p>
+<p>​          background-color: aqua;</p>
+<p>​         float:left;  }</p>
+<p> .box2{  width:300px;</p>
+<p>​          height: 300px;</p>
+<p>​          background-color: orange;</p>
+<p>​          float:left; </p>
+<p>​        }</p>
+<p><img src="https://img-blog.csdnimg.cn/bd9bba2907c246cebe5faca63842cc1d.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAfnZpb2xldC0=,size_20,color_FFFFFF,t_70,g_se,x_16" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p><strong>5.如果浮动元素上面是一个非浮动元素，那该浮动元素无法上移</strong>；</p>
+<p> .box1{  width:200px;</p>
+<p>​          height: 200px;</p>
+<p>​          background-color: aqua;</p>
+<p>​        }</p>
+<p> .box2{  width:300px;</p>
+<p>​          height: 300px;</p>
+<p>​          background-color: orange;</p>
+<p>​          float:left; </p>
+<p>  }  </p>
+<p>.box3{  width:300px;</p>
+<p>​          height: 300px;</p>
+<p>​          background-color: yellow;</p>
+<p>​          float:left; </p>
+<p>​        }</p>
+<p><img src="https://img-blog.csdnimg.cn/3a895e807f334d24ad78a0d5a1350494.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAfnZpb2xldC0=,size_20,color_FFFFFF,t_70,g_se,x_16" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>*<em>6.浮动元素不会超过他上面的浮动兄弟元素，最多和其一样高</em>***（如图中所示，三个盒子均设置了浮动，box1旁边还有位置，虽然不够box2，但是够box3，结果却是box3也不上去，就是因为作为兄弟元素而且在box3前面的box2上不去，所以box3也不能上去）</p>
+<p>​               .box1{  width:300px;</p>
+<p>​          height: 300px;</p>
+<p>​        background-color: aqua;</p>
+<p>​          float:left; </p>
+<p>​        }</p>
+<p>   .box2{  width:300px;</p>
+<p>​          height: 300px;</p>
+<p>​          background-color: orange;</p>
+<p>​          float:left; </p>
+<p>​        }</p>
+<p> .box3{  width:200px;</p>
+<p>​          height: 200px;</p>
+<p>​          background-color: yellow;</p>
+<p>​          float:left; </p>
+<p>​        }</p>
+<p><img src="https://img-blog.csdnimg.cn/833b7762456f4a6f8ff37adfc8be762b.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAfnZpb2xldC0=,size_20,color_FFFFFF,t_70,g_se,x_16" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p><strong>四，简单说，浮动主要作用是让页面中的元素水平排列，可以用来做一些水平方向上的布局</strong></p>
+<p>五：补充特点：</p>
+<p><strong>1.浮动不会盖住文字，文字会自动环绕在浮动元素周围，因此可以利用浮动达到文字环绕图片的效果</strong>(如图是只给box1设置了浮动后的效果，但是没有设置浮动的文字不会像没有设置浮动的box那样去被设置了浮动的box盖住)</p>
+<p><img src="https://img-blog.csdnimg.cn/9ed46f3ef856461b88928f8137c2f9a6.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAfnZpb2xldC0=,size_20,color_FFFFFF,t_70,g_se,x_16" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<ol start="2">
+<li><strong>元素设置浮动 从文档流脱离 以后，其特点会发生一些改变：</strong></li>
+</ol>
+<p>​           <strong>块元素：（1）不再独占一行</strong></p>
+<p>​               <strong>（2）不设置宽度和高度的情况下宽度和高度都会被默认内容撑开</strong></p>
+<p>​           <strong>行内元素：脱离文档流后会变为块元素，可以设置宽和高，特点与脱离文档流的块元素一样</strong>  </p>
+<p>如下所示：</p>
+<div class="box2">我是块元素box1</div
+
+
+
+<p><span class="s1">  我是行内元素span</span></p>
+<p>.box2{</p>
+<p>​           background-color: red;</p>
+<p>​         float:left;}</p>
+<p>​        .s1{  </p>
+<p>​          width:300px;</p>
+<p>​          height: 300px;</p>
+<p>​          background-color: yellow;</p>
+<p>​          float:left;</p>
+<p>​        }</p>
+<p><img src="https://img-blog.csdnimg.cn/af89bac7a95d43609ab09010603a77b4.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAfnZpb2xldC0=,size_20,color_FFFFFF,t_70,g_se,x_16" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/11/19/1.%E6%B5%AE%E5%8A%A8/" data-id="ckw6f196s000028v6fe0laczk" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-p50和51" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/11/12/p50%E5%92%8C51/" class="article-date">
@@ -372,6 +492,10 @@
       <ul>
         
           <li>
+            <a href="/2021/11/19/1.%E6%B5%AE%E5%8A%A8/">(no title)</a>
+          </li>
+        
+          <li>
             <a href="/2021/11/12/p50%E5%92%8C51/">(no title)</a>
           </li>
         
@@ -385,10 +509,6 @@
         
           <li>
             <a href="/2021/11/04/violet/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2021/11/03/hello-world/">Hello World</a>
           </li>
         
       </ul>
